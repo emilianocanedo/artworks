@@ -17,10 +17,10 @@ void draw() {
   
   for(int f = 0; f<30; f++)
   {
-    fill(105 + 150*cos(s/8*coef), 105 + 150*cos(s/16*coef), 105 + 105*cos(s/24*coef), 255);
-    stroke(105 + 150*cos(s/8*coef), 105 + 150*cos(s/16*coef), 105 + 105*cos(s/24*coef), 100+f);  
     for(int i = 1; i<31; i++){
-      strokeWeight(i/5);
+      strokeWeight(i/4);
+      fill(105, 105, 250, 255);
+      stroke(105, 105, 250, 100+f);
       circle(403 + (600-i*20)*cos((sin(s*0.00002)*40000+f*220+i)*coef*i/45), 403 + (600-i*20)*sin((sin(s*0.00002)*40000+f*220+i)*coef*i/50), i/4);
     }
   }
