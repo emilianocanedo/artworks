@@ -63,15 +63,19 @@ void draw()
 {
   int t = millis();
   background(0);
-  PImage photo = loadImage("dot.png");
+  PImage photo = loadImage("dots.png");
+  PImage photo2 = loadImage("dotg.png");
+  
   for (int i = 0; i<47; i ++)
   {
     points[i][0] = lerp(points[i][0], 200 * sin((t+i*20)*sin_coef), 0.05);
-    points[i][1] = lerp(points[i][1], 200 * cos((t+i*20)*cos_coef), 0.05);
-    fill(255);
-    stroke(255, 255, 255, 100);
-    strokeWeight(3);
-    ellipse(250 + points[i][0], 250 + points[i][1], 6, 6);
+    points[i][1] = lerp(points[i][1], 200 * cos((t+i*20)*cos_coef), 0.05); 
+    image(photo2, 225 + points[i][0], 225 + points[i][1]);
+  }
+  
+  for (int i = 0; i<47; i ++)
+  {
+    image(photo, 250 + points[i][0], 250 + points[i][1]);
   }
 }
 
