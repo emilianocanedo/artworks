@@ -63,6 +63,7 @@ void draw()
 {
   int t = millis();
   background(0);
+  PImage photo = loadImage("dot.png");
   for (int i = 0; i<47; i ++)
   {
     points[i][0] = lerp(points[i][0], 200 * sin((t+i*20)*sin_coef), 0.05);
